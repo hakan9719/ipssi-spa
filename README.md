@@ -12,7 +12,7 @@ Il y a une page qui présente tous les animaux, on peut filtrer par catégorie (
 
 Une page de l'animal, avec formulaire de contact pour le réserver.
 
-Inscription/ connexion de l'utilisateur
+Inscription/ connexion de l'utilisateur -> que pour les paiement ?
 
 Paiement en ligne des frais de réservation
 
@@ -64,18 +64,18 @@ Animal:
     String Couleurs
     String Description
     String Localisation
-    Bool Urgence
-    Int Status (0: pas actif, 1: dispo en adoption, 2: adopter, 3: urgent) (pas sur pour le status)
+    <!-- Bool Urgence -->
+    <!-- Int Status (0: pas actif, 1: dispo en adoption, 2: adopter, 3: urgent) (pas sur pour le status) -->
 
 Utilisateur:
     Int id
     String Nom
     String Prenom
-    String Sexe
+    <!-- String Sexe -->
     Date DateNaissance
     String Email
     String Mdp
-    Int Status (??)
+    <!-- Int Status (??) -->
 
 Produit: (Dérivé)
     Int id
@@ -83,14 +83,14 @@ Produit: (Dérivé)
     String Type
     String Description
     Float Prix
-    Int Stock
+    <!-- Int Stock -->
 
 Article: (Blog)
     Int id
     String Titre
     String Texte
-    String Auteur
-    Date Date
+    <!-- String Auteur -->
+    <!-- Date Date -->
 
 Paiement : (Don/Frais de réservation)
     Utilisateur id
@@ -99,23 +99,61 @@ Paiement : (Don/Frais de réservation)
     Date Date
     String Nom du titulaire
 
-Arborescence :
-    App
-        Animals
-        Utilisateur
-        Content
+templates
+    indexView.php
 
-    templates
-        indexView.php
+    blogView.php
+    articleView.php
 
-        blogView.php
-        articleView.php
+    animauxView.php
+    animalView.php
 
-        animauxView.php
-        animalView.php
+    produitDeriveView.php
+    produitView.php
 
-        produitDeriveView.php
-        produitView.php
+Animals:
+    Int id
+    Varchar name
+    Varchar species
+    Varchar size
+    Varchar race
+    Varchar gender
+    Date birthdate
+    Varchar color
+    Varchar description
+    Varchar location
+    <!-- Bool Urgence -->
+    <!-- Int Status (0: pas actif, 1: dispo en adoption, 2: adopter, 3: urgent) (pas sur pour le status) -->
 
-    Vendor
-        autoload
+Users:
+    Int id
+    Varchar lastname
+    Varchar firstname
+    <!-- Varchar Sexe -->
+    Date birthdate
+    Varchar email
+    Varchar password
+    <!-- Int Status (??) -->
+
+Products: (Dérivé)
+    Int id
+    Varchar name
+    <!-- Varchar Type -->
+    Varchar description
+    Float price
+    <!-- Int Stock -->
+
+Articles: (Blog)
+    Int id
+    Varchar title
+    Varchar content
+    <!-- Varchar Auteur -->
+    <!-- Date Date -->
+
+Donations:
+    Int id
+    Int user_id
+    Int card_number
+    Int cvc
+    Date date
+    Varchar name
