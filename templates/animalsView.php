@@ -18,9 +18,6 @@ require "headerView.php";
                 </div>
             <?php endforeach ?>
         </div>
-        <!-- <img src="https://picsum.photos/id/237/200/200" class="card-img-top" alt="...">
-        <img src="https://picsum.photos/id/1062/200/200" class="card-img-top" alt="...">
-        <img src="https://picsum.photos/id/1074/200/200" class="card-img-top" alt="..."> -->
     </div>
 </body>
 </html>
