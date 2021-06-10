@@ -24,12 +24,30 @@ class ProductsController {
         include ROOT."/templates/Products/product.php";
     }
 
+    public function deleteProduct($id)
+    {
+        $product = $this->manager->delete($id);
+        header("Location:/spa/public/?page=shop");
+    }
+
+
     public function addProduct(/* $data */)
         {
             if (!empty($_POST)) {
-                $animal = new Products();
-                $animal->hydrate($_POST);
-                $this->manager->create($animal);
+                $product = new Products();
+                $product->hydrate($_POST);
+                $this->manager->create($product);
+                header("Location:/spa/public/?page=shop");
+            }
+            include ROOT."/templates/Products/addProduct.php";
+        }
+
+    public function updateProduct(/* $data */)
+        {
+            if (!empty($_POST)) {
+                $product = new Products();
+                $product->hydrate($_POST);
+                $this->manager->update($product);
                 header("Location:/spa/public/?page=shop");
             }
             include ROOT."/templates/Products/addProduct.php";

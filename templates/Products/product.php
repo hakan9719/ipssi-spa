@@ -17,6 +17,9 @@ require "headerView.php";
                 <p class="p-0"><?=$product->getPrice()?></p>
             </div>
         </div>
+        <button><a href="/spa/public?page=deleteProduct&id=<?php echo $product->getId() ?>">Delte</a></button>
+        <button><a href="/spa/public?page=updateProduct&id=<?php echo $product->getId() ?>">update</a></button>
+
     
     </div>
 
