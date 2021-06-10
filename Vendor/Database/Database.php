@@ -1,15 +1,6 @@
 <?php
 namespace Vendor\Database;
 
-// $pdo = new PDO("mysql:host=localhost:8889,dbname=blog", "root", "root", [
-//     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-// ]);
-
-// $query = $pdo->query("SELECT * FROM article");
-// foreach ($query->fetchAll(PDO::FETCH_ASSOC) as $value) {
-//     # code...
-// }
-
 class Database {
 
     private $dbUser = "root";
