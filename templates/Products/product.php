@@ -1,6 +1,7 @@
-<?php 
+<?php
 
-require "headerView.php";
+require ROOT."/templates/headerView.php";
+
 ?>
     <div class="container">
         <div class="row">

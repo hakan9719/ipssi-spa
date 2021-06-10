@@ -19,9 +19,9 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
             <a class="nav-link" href="/index.php?page=animals">Animaux</a>
-            <a class="nav-link" href="/spa/public?page=blog">Blog</a>
+            <a class="nav-link" href="/index.php?page=blog">Blog</a>
             <a class="nav-link" href="/index.php?page=donation">Don</a>
-            <a class="nav-link" href="/spa/public/?page=shop">Boutique</a>
+            <a class="nav-link" href="/index.php?page=shop">Boutique</a>
         </div>
         </div>
     </div>
