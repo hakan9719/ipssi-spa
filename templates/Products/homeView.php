@@ -1,27 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-</head>
 <?php
 
 require "headerView.php";
 ?>
-
-<body>
-    <div class="d-flex justify-content-between">
-    <?php foreach ($products as $value): ?>
-        <?php $id = $value->getId() ?>
-        <li class="border"> <?= $value->getName() ?></li>
-        <button><a href="/spa/public?page=product&id=<?php echo $id?>" >Voir un produit</a></button>
-        <?php endforeach; ?>
+    <div class="container p-2">
+        <div class="row d-flex justify-content-between">
+            <h3 class="col-6">Liste de nos produits dérivés</h3>
+            <a href="/spa/public?page=addProduct" class="col-2 btn btn-secondary">Ajouter un produit</a>
+        </div>
+        <hr>
+        <div class="row">
+            <?php foreach ($products as $value): ?>
+            <div class="card col-6" style="width: 18rem; margin: 20px;">
+                <img class="card-img-top" src='https://fakeimg.pl/286x180/?text=<?php echo $value->getName() ?>' alt="Image Produit">
+                <div class="card-body">
+                    <h5 class="card-title"><?= $value->getName() ?></h5>
+                    <p class="card-text"><?= $value->getDescription() ?></p>
+                    <p class="card-text">Prix : <?= $value->getPrice() ?>€</p>
+                    <a href="/spa/public?page=product&id=<?php echo $value->getId() ?>" class="btn btn-secondary">Plus d'infos</a>
+                </div>
+            </div>
+            <?php endforeach; ?>
+        </div>
     </div>
-    <button><a href="/spa/public?page=addProduct">Ajouter un produit</a></button>
 </body>
 
 </html>

@@ -47,8 +47,9 @@ class ProductsController {
             if (!empty($_POST)) {
                 $product = new Products();
                 $product->hydrate($_POST);
-                $this->manager->update($product);
-                header("Location:/spa/public/?page=shop");
+                $id = $_GET['id'];
+                $this->manager->update($product, $id);
+                header("Location:/spa/public/?page=product&id=$id");
             }
             include ROOT."/templates/Products/addProduct.php";
         }

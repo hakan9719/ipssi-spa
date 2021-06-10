@@ -28,9 +28,9 @@ class ProductsManager extends Manager{
         return $query->fetchAll(\PDO::FETCH_CLASS, "App\Entity\Products")[0];
     }
 
-    public function update($product)
+    public function update($product, $id)
     {
-        $statement = "UPDATE products SET name = :name, description = :description, price = :price";
+        $statement = "UPDATE products SET name = :name, description = :description, price = :price WHERE id =".$id." ";
 
         $prepare = $this->db->prepare($statement);
         $prepare->bindValue(":name", $product->getName());

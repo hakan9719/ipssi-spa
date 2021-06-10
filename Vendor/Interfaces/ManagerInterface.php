@@ -10,7 +10,7 @@ interface ManagerInterface {
 
     public function getOne($id);
 
-    public function update($article);
+    public function update($article, $id);
 
     public function delete($id);
 
