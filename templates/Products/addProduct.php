@@ -16,7 +16,7 @@ require "headerView.php";
     <form action="" class="form" method="POST">
         <div class="form-group">
             <label for="title" class="form-label">Titre:</label>
-            <input type="text" class="form-control" name="name" id="title" value="Un super article">
+            <input type="text" class="form-control" name="name" id="title" value="Nom Produit">
         </div>
         <div class="form-group">
             <label for="content" class="form-label">Contenu:</label>

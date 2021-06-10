@@ -18,6 +18,12 @@ class ProductsController {
         include ROOT."/templates/Products/homeView.php";
     }
 
+    public function product($id)
+    {
+        $product = $this->manager->getOne($id);
+        include ROOT."/templates/Products/product.php";
+    }
+
     public function addProduct(/* $data */)
         {
             if (!empty($_POST)) {
