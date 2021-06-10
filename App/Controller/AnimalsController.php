@@ -21,16 +21,16 @@ class AnimalsController {
     public function animals()
     {
         $animals = $this->manager->getList();
-        include ROOT."/templates/animalsView.php";
+        include ROOT."/templates/Animals/animalsView.php";
     }
 
     public function animal($id)
     {
         $animal = $this->manager->getOne($id);
-        include ROOT."/templates/animalView.php";
+        include ROOT."/templates/Animals/animalView.php";
     }
 
-    public function addArticle(/* $data */)
+    public function addAnimal(/* $data */)
         {
             if (!empty($_POST)) {
                 $animal = new Animals();
@@ -38,6 +38,7 @@ class AnimalsController {
                 $this->manager->create($animal);
                 header("Location:index.php?page=animals");
             }
-            include ROOT."/templates/addArticle.php";
+            
+            include ROOT."/templates/Animals/addAnimal.php";
         }
 }
