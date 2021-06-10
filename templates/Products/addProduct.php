@@ -16,15 +16,15 @@ require "headerView.php";
                 <form action="" class="form justify-content-center" method="POST">
                     <div class="form-group">
                         <label for="title" class="form-label">Nom du produit :</label>
-                        <input type="text" class="form-control" name="name" id="name" value="">
+                        <input type="text" class="form-control" name="name" id="name" value="ProductName">
                     </div>
                     <div class="form-group">
                         <label for="categorie" class="form-label">Prix :</label>
-                        <input type="number" class="form-control" name="price" id="price" value="">
+                        <input type="number" class="form-control" name="price" id="price" value="ProductPrice">
                     </div>  
                     <div class="form-group">
                             <label for="content" class="form-label">Description :</label>
-                            <textarea type="text" class="form-control" name="description" id="description" value=""></textarea>
+                            <textarea type="text" class="form-control" name="description" id="description" value="ProductDescription"></textarea>
                     </div>
                         <button style="margin-top: 10px;" class="btn btn-secondary">Valider</button>
                 </form>
