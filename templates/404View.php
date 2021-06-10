@@ -16,7 +16,7 @@ require "headerView.php";
                 </div>
                 <div class="error-actions">
                     <a href="/index.php?page=home" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-home"></span>
-                        Take Me Home </a><a href="http://www.jquery2dotnet.com" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-envelope"></span> Contact Support </a>
+                        Take Me Home </a>
                 </div>
             </div>
         </div>

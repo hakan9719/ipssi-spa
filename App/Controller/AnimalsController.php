@@ -2,14 +2,14 @@
 
 namespace App\Controller;
 
-use App\Entity\Animal;
-use App\Manager\AnimalManager;
+use App\Entity\Animals;
+use App\Manager\AnimalsManager;
 
-class AnimalController {
+class AnimalsController {
 
     public function __construct()
     {
-        $this->manager = new AnimalManager;
+        $this->manager = new AnimalsManager;
     }
 
     public function home()
@@ -33,7 +33,7 @@ class AnimalController {
     public function addArticle(/* $data */)
         {
             if (!empty($_POST)) {
-                $animal = new Animal();
+                $animal = new Animals();
                 $animal->hydrate($_POST);
                 $this->manager->create($animal);
                 header("Location:index.php?page=animals");

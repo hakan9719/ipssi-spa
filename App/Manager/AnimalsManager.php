@@ -3,15 +3,15 @@
 namespace App\Manager;
 use Vendor\Manager\Manager;
 
-class AnimalManager extends Manager{
+class AnimalsManager extends Manager{
 
     protected $db;
-    protected $table = "animal";
+    protected $table = "animals";
 
 
     public function create ($animal)
     {
-        $statement = "INSERT INTO animal (name, species, size, race,gender,birthdate,color,description,location) 
+        $statement = "INSERT INTO animals (name, species, size, race,gender,birthdate,color,description,location) 
                         VALUES (:name, :species, :size, :race,:gender,:birthdate,:color,:description,:location)";
         
         $prepare = $this->db->prepare($statement);
@@ -29,8 +29,8 @@ class AnimalManager extends Manager{
     
     public function getOne($id)
     {
-        $query = $this->db->query("SELECT * FROM animal WHERE id =".$id['id']);
-        return $query->fetchAll(\PDO::FETCH_CLASS, "App\Entity\Animal")[0];
+        $query = $this->db->query("SELECT * FROM animals WHERE id =".$id['id']);
+        return $query->fetchAll(\PDO::FETCH_CLASS, "App\Entity\Animals")[0];
 
         // $statement = "SELECT * FROM animal WHERE id = ? ";
         // $prepare = $this->db->prepare($statement);

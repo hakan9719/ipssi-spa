@@ -1,21 +1,21 @@
 <?php
 
 require "headerView.php";
-use App\Entity\Animal;
-use App\Manager\AnimalManager;
+use App\Entity\Animals;
+use App\Manager\AnimalsManager;
 
 
-$animal = new Animal();
+$animal = new Animals();
 // vd($animal);
 
-$animalManagers = new AnimalManager();
+$animalManagers = new AnimalsManager();
 // vd($animalManagers->getAnimals());
 
 $animals = $animalManagers->getList();
-$animal = new Animal();
+$animal = new Animals();
 // vd($animal);
 
-$animalManagers = new AnimalManager();
+$animalManagers = new AnimalsManager();
 // vd($animalManagers->getAnimals());
 
 $animals = $animalManagers->getList();

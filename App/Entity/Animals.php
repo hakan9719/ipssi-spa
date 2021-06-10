@@ -2,7 +2,7 @@
 
 namespace App\Entity;
 
-class Animal {
+class Animals {
 
     private $id;
     private $name;

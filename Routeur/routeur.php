@@ -24,15 +24,15 @@
 //     "test" => ["controller" =>"ArticleController", "method" => "test", "param" => ["id" => $id]],
 // ];
 $routes = [
-    "animals" => ["controller" =>"AnimalController", "method" => "animals"],
-    "animal" => ["controller" =>"AnimalController", "method" => "animal", "param" => ["id" => $_GET['id']??'']],
-    "home" => ["controller" =>"AnimalController", "method" => "home"],
+    "animals" => ["controller" =>"AnimalsController", "method" => "animals"],
+    "animal" => ["controller" =>"AnimalsController", "method" => "animal", "param" => ["id" => $_GET['id']??'']],
+    "home" => ["controller" =>"AnimalsController", "method" => "home"],
 ];
 
 // var_dump($_GET["page"]);
 // var_dump(array_key_exists($_GET["page"],$routes));
 // var_dump($routes);
-if(array_key_exists($_GET["page"],$routes)){
+if(isset($_GET["page"]) && array_key_exists($_GET["page"],$routes)){
     $case = $routes[$_GET["page"]];
     $caseController = "App\Controller\\".$case["controller"];
     $controller = new $caseController();
