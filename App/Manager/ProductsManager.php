@@ -30,7 +30,7 @@ class ProductsManager extends Manager{
 
     public function update($product,$id)
     {
-        $statement = "UPDATE products SET name = :name, description = :description, price = :price";
+        $statement = "UPDATE products SET name = :name, description = :description, price = :price WHERE id =".$id." ";
 
         $prepare = $this->db->prepare($statement);
         $prepare->bindValue(":name", $product->getName());
