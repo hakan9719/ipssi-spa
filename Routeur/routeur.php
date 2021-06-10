@@ -5,6 +5,8 @@ $routes = [
     "animal" => ["controller" =>"AnimalsController", "method" => "animal", "param" => ["id" => $_GET['id']??'']],
     "home" => ["controller" =>"AnimalsController", "method" => "home"],
     "addAnimal" => ["controller" =>"AnimalsController", "method" => "addAnimal"],
+    "updateAnimal" => ["controller" =>"AnimalsController", "method" => "updateAnimal", "param" => ["id" => $_GET['id']??'']],
+    "deleteAnimal" => ["controller" =>"AnimalsController", "method" => "deleteAnimal", "param" => ["id" => $_GET['id']??'']],
 ];
 
 

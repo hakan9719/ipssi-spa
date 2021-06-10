@@ -4,6 +4,8 @@ require ROOT."/templates/headerView.php";
 
 ?>
     <div class="container">
+        <a href="/index.php?page=addAnimal" class="btn btn-primary">Add Animal</a>
+        
         <div class="row">
             <?php foreach($animals as $animal): ?>
                 <div class="col-3 mt-4">

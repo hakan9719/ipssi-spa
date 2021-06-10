@@ -29,6 +29,8 @@ require ROOT."/templates/headerView.php";
                 <p>Description :</p>
                 <p class="p-0"><?=$animal->getDescription()?></p>
             </div>
+            <a href="/index.php?page=deleteAnimal&id=<?=$animal->getId()?>">Supprimer</a>
+            <a href="/index.php?page=updateAnimal&id=<?=$animal->getId()?>">Modifier</a>
         </div>
 
 

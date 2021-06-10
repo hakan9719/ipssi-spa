@@ -31,21 +31,31 @@ class AnimalsManager extends Manager{
     {
         $query = $this->db->query("SELECT * FROM animals WHERE id =".$id['id']);
         return $query->fetchAll(\PDO::FETCH_CLASS, "App\Entity\Animals")[0];
-
-        // $statement = "SELECT * FROM animal WHERE id = ? ";
-        // $prepare = $this->db->prepare($statement);
-        // $prepare->execute([$id['id']]);
-        // $res = $prepare->fetchAll();
-        // return $res;
     }
 
-    public function update($article)
+    
+    public function update($animal, $id)
     {
+        $statement = "UPDATE animals SET name = :name, species = :species, size = :size, race = :race, gender = :gender, birthdate = :birthdate, color = :color, description = :description, location = :location WHERE id =".$id." ";
 
+        $prepare = $this->db->prepare($statement);
+        $prepare->bindValue(":name", $animal->getName());
+        $prepare->bindValue(":species", $animal->getSpecies());
+        $prepare->bindValue(":size", $animal->getSize());
+        $prepare->bindValue(":race", $animal->getRace());
+        $prepare->bindValue(":gender", $animal->getGender());
+        $prepare->bindValue(":birthdate", $animal->getBirthdate());
+        $prepare->bindValue(":color", $animal->getColor());
+        $prepare->bindValue(":description", $animal->getDescription());
+        $prepare->bindValue(":location", $animal->getLocation());
+
+        $prepare->execute();
     }
+
+
     public function delete($id)
     {
-        
+        $query = $this->db->query("DELETE FROM animals WHERE id =".$id['id']);
     }
 
 }

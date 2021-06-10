@@ -41,4 +41,23 @@ class AnimalsController {
             
             include ROOT."/templates/Animals/addAnimal.php";
         }
+   
+    public function deleteAnimal($id)
+    {
+        $animal = $this->manager->delete($id);
+        header("Location:index.php?page=animals");
+    }
+
+    public function updateAnimal(/* $data */)
+    {
+        if (!empty($_POST)) {
+            $animal = new Animals();
+            $animal->hydrate($_POST);
+            var_dump($animal);
+            $id = $_GET['id'];
+            $this->manager->update($animal, $id);
+            header("Location:index.php?page=animal&id=$id");
+        }
+        include ROOT."/templates/Animals/addAnimal.php";
+    }
 }

@@ -4,6 +4,16 @@ require ROOT."/templates/headerView.php";
 
 ?>
 <div class="container">
+    <h1 class="display-4 py-2 text-truncate">
+        <?php if ($_GET["page"] == "updateAnimal"){
+                    echo 'Modifier un animal';
+                } else {
+                    echo 'Ajouter un animal';
+                }
+        ?>
+    </h1>
+
+
     <form action="" class="form" method="POST">
 
         <label for="name" class="form-label">Nom</label>
