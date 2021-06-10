@@ -20,7 +20,7 @@ require "headerView.php";
                     </div>
                     <div class="form-group">
                         <label for="categorie" class="form-label">Prix :</label>
-                        <input type="number" class="form-control" name="price" id="price" value="ProductPrice">
+                        <input type="number" class="form-control" name="price" id="price" value="1">
                     </div>  
                     <div class="form-group">
                             <label for="content" class="form-label">Description :</label>
