@@ -5,7 +5,7 @@ require ROOT."/templates/headerView.php";
     <div class="container p-2">
         <div class="row d-flex justify-content-between">
             <h3 class="col-6">Liste de nos produits dérivés</h3>
-            <a href="/spa/public?page=addProduct" class="col-2 btn btn-secondary">Ajouter un produit</a>
+            <a href="/spa/public/?page=addProduct" class="col-2 btn btn-secondary">Ajouter un produit</a>
         </div>
         <hr>
         <div class="row">
@@ -16,7 +16,7 @@ require ROOT."/templates/headerView.php";
                     <h5 class="card-title"><?= $value->getName() ?></h5>
                     <p class="card-text"><?= $value->getDescription() ?></p>
                     <p class="card-text">Prix : <?= $value->getPrice() ?>€</p>
-                    <a href="/spa/public?page=product&id=<?php echo $value->getId() ?>" class="btn btn-secondary">Plus d'infos</a>
+                    <a href="/spa/public/?page=product&id=<?php echo $value->getId() ?>" class="btn btn-secondary">Plus d'infos</a>
                 </div>
             </div>
             <?php endforeach; ?>

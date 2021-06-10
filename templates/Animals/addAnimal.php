@@ -1,51 +1,63 @@
+
 <?php
-
 require ROOT."/templates/headerView.php";
-
 ?>
 <div class="container">
-    <h1 class="display-4 py-2 text-truncate">
-        <?php if ($_GET["page"] == "updateAnimal"){
-                    echo 'Modifier un animal';
-                } else {
-                    echo 'Ajouter un animal';
-                }
-        ?>
-    </h1>
-
-
-    <form action="" class="form" method="POST">
-
-        <label for="name" class="form-label">Nom</label>
-        <input type="text" name="name" id="name">
-
-        <label for="species" class="form-label">Espèces</label>
-        <input type="text" name="species" id="species">
-
-        <label for="size" class="form-label">Taille</label>
-        <input type="text" name="size" id="size">
-
-        <label for="race" class="form-label">Race</label>
-        <input type="text" name="race" id="race">
-
-        <label for="gender" class="form-label">Sexe</label>
-        <input type="text" name="gender" id="gender">
-
-        <label for="birthdate" class="form-label">Date de naissance</label>
-        <input type="date" name="birthdate" id="birthdate">
-
-        <label for="color" class="form-label">Couleur</label>
-        <input type="text" name="color" id="color">
-
-        <label for="description" class="form-label">Description</label>
-        <input type="text" name="description" id="description">
-
-        <label for="location" class="form-label">Localisation</label>
-        <input type="text" name="location" id="location">
-
-        <button class="btn btn-primary">Submit</button>
-    </form>
+    <div class="row">
+        <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4" style="background-color: #f8f9fa;">
+            <h1 class="display-4 py-2 text-truncate">
+                <?php if ($_GET["page"] == "updateAnimal"){
+                        echo 'Modifier un animal';
+                    } else {
+                        echo 'Ajouter un animal';
+                    }
+                ?>
+            </h1>
+            <div class="px-2" >
+                <form action="" class="form justify-content-center" method="POST">
+                    <div class="form-group">
+                        <label for="title" class="form-label">Nom de l'animal :</label>
+                        <input type="text" class="form-control" name="name" id="name" value="Nom de l'animal">
+                    </div>
+                    <div class="form-group">
+                        <label for="title" class="form-label">Espèce de l'animal :</label>
+                        <input type="text" class="form-control" name="species" id="species" value="Espèce">
+                    </div>
+                    <div class="form-group">
+                        <label for="title" class="form-label">Taille de l'animal :</label>
+                        <input type="text" class="form-control" name="size" id="size" value="Taille">
+                    </div>
+                    <div class="form-group">
+                        <label for="title" class="form-label">Race de l'animal :</label>
+                        <input type="text" class="form-control" name="race" id="race" value="Race">
+                    </div>
+                    <div class="form-group">
+                        <label for="title" class="form-label">Sexe de l'animal :</label>
+                        <input type="text" class="form-control" name="gender" id="gender" value="Sexe">
+                    </div>
+                    <div class="form-group">
+                        <label for="title" class="form-label">Date de naissance :</label>
+                        <input type="date" class="form-control" name="birthdate" id="birthdate">
+                    </div>
+                    <div class="form-group">
+                        <label for="title" class="form-label">Couleur de l'animal :</label>
+                        <input type="text" class="form-control" name="color" id="color" value="Couleur">
+                    </div>
+                    <div class="form-group">
+                        <label for="categorie" class="form-label">Localisation :</label>
+                        <input type="text" class="form-control" name="location" id="location" value="Localisation">
+                    </div>  
+                    <div class="form-group">
+                            <label for="content" class="form-label">Description :</label>
+                            <textarea type="text" class="form-control" name="description" id="description" value="ProductDescription"></textarea>
+                    </div>
+                        <button style="margin-top: 10px;" class="btn btn-secondary">Valider</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 
 </html>
+      

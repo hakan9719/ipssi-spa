@@ -1,25 +1,26 @@
-<?php 
+<?php
 
 require ROOT."/templates/headerView.php";
-
 ?>
-    <div class="container">
-        <a href="/index.php?page=addAnimal" class="btn btn-primary">Add Animal</a>
-        
+    <div class="container p-2">
+        <div class="row d-flex justify-content-between">
+            <h3 class="col-6">Liste de nos animaux disponibles</h3>
+            <a href="/spa/public/?page=addAnimal" class="col-2 btn btn-secondary">Ajouter un animal</a>
+        </div>
+        <hr>
         <div class="row">
-            <?php foreach($animals as $animal): ?>
-                <div class="col-3 mt-4">
-                    <div class="card" style="width: 18rem;">
-                        <img src="https://picsum.photos/id/237/200/200" class="card-img-top" alt="...">
-                        <div class="card-body h-25">
-                            <h5 class="card-title"><?=$animal->getName()?></h5>
-                            <p class="card-text h-25 overflow-auto"><?=$animal->getDescription()?></p>
-                            <a href="/index.php?page=animal&id=<?=$animal->getId()?>" class="btn btn-primary">Go fiche Animal</a>
-                        </div>
-                    </div>
+            <?php foreach ($animals as $value): ?>
+            <div class="card col-6" style="width: 18rem; margin: 20px;">
+                <img class="card-img-top" src='https://fakeimg.pl/286x180/?text=<?php echo $value->getName() ?>' alt="Image animal">
+                <div class="card-body">
+                    <h5 class="card-title"><?= $value->getName() ?></h5>
+                    <p class="card-text"><?= $value->getDescription() ?></p>
+                    <a href="/spa/public/?page=animal&id=<?php echo $value->getId() ?>" class="btn btn-secondary">Plus d'infos</a>
                 </div>
-            <?php endforeach ?>
+            </div>
+            <?php endforeach; ?>
         </div>
     </div>
 </body>
+
 </html>

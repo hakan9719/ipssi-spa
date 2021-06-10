@@ -1,7 +1,8 @@
 <?php
 
 $routes = [
-    "home" => ["controller" =>"AnimalsController", "method" => "home"],
+    "donations" => ["controller" => "DonationsController", "method" => "home"],
+    "home" => ["controller" => "DonationsController", "method" => "addDonation"],
 
     "animal" => ["controller" =>"AnimalsController", "method" => "animal", "param" => ["id" => $_GET['id']??'']],
     "animals" => ["controller" =>"AnimalsController", "method" => "animals"],

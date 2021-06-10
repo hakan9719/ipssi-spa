@@ -1,39 +1,32 @@
 <?php 
-
 require ROOT."/templates/headerView.php";
-
 ?>
-    <div class="container">
-        <div class="row">
-            <div class="col-4 border p-2 m-2">
-                <p>Nom :</p>
-                <p class="p-0"><?=$animal->getName()?></p>
+
+<div class="container p-2">
+    <div class="row">
+        <img src="https://fakeimg.pl/286x180/?text=<?php echo $animal->getName() ?>" class="col-6" alt="image produit">
+        <div class="col-6">
+                <p>Nom de l'animal : <?php echo $animal->getName() ?></p>
+                <p>Espèce de l'animal : <?php echo $animal->getSpecies() ?></p>           
+                <p>Race de l'animal : <?php echo $animal->getRace() ?></p>           
+                <p>Taille de l'animal : <?php echo $animal->getSize() ?></p>           
+                <p>Date de naissance de l'animal : <?php echo $animal->getBirthdate() ?></p>           
+                <p>Sexe de l'animal : <?php echo $animal->getGender() ?></p>           
+                <p>Couleur de l'animal : <?php echo $animal->getColor() ?></p>           
+                <p>Localisation de l'animal : <?php echo $animal->getLocation() ?></p>                      
+            <div class="col-12">
+                <a href="/spa/public/?page=deleteAnimal&id=<?php echo $animal->getId() ?>" class="btn btn-danger">Retirer cet animal</a>
+                <a href="/spa/public/?page=updateAnimal&id=<?php echo $animal->getId() ?>" class="btn btn-secondary">Modifier la fiche de l'animal</a>
             </div>
-            <div class="col-4 border p-2 m-2">
-                <p>Date de naissance :</p>
-                <p class="p-0"><?=$animal->getBirthdate()?></p>
-            </div>
-            <div class="col-4 border p-2 m-2">
-                <p>Race :</p>
-                <p class="p-0"><?=$animal->getRace()?></p>
-            </div>
-            <div class="col-4 border p-2 m-2">
-                <p>Couleur :</p>
-                <p class="p-0"><?=$animal->getColor()?></p>
-            </div>
-            <div class="col-4 border p-2 m-2">
-                <p>Sexe :</p>
-                <p class="p-0"><?=$animal->getGender()?></p>
-            </div>
-            <div class="col-12 border p-2 m-2">
-                <p>Description :</p>
-                <p class="p-0"><?=$animal->getDescription()?></p>
-            </div>
-            <a href="/index.php?page=deleteAnimal&id=<?=$animal->getId()?>">Supprimer</a>
-            <a href="/index.php?page=updateAnimal&id=<?=$animal->getId()?>">Modifier</a>
         </div>
+    </div>
+    <hr>
+    <div class="row">
+        <p>Description de l'animal :</p>
+        <p><?php echo $animal->getDescription() ?></p>
+    </div>
 
-
+        <hr>
         <div class="row">
             <form class="col-6 " action="" method="post">
                 <h2>Réserver <?=$animal->getName()?></h2>
@@ -51,7 +44,6 @@ require ROOT."/templates/headerView.php";
         </div>
     
     </div>
-
     
 </body>
 </html>

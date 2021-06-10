@@ -12,13 +12,7 @@ class AnimalsController {
         $this->manager = new AnimalsManager;
     }
 
-    public function home()
-    {
-        $animals = $this->manager->getList();
-        include ROOT."/templates/homeView.php";
-    }
-
-    public function animals()
+     public function animals()
     {
         $animals = $this->manager->getList();
         include ROOT."/templates/Animals/animalsView.php";
@@ -36,7 +30,7 @@ class AnimalsController {
                 $animal = new Animals();
                 $animal->hydrate($_POST);
                 $this->manager->create($animal);
-                header("Location:index.php?page=animals");
+                header("Location:/spa/public/?page=animals");
             }
             
             include ROOT."/templates/Animals/addAnimal.php";
@@ -45,7 +39,7 @@ class AnimalsController {
     public function deleteAnimal($id)
     {
         $animal = $this->manager->delete($id);
-        header("Location:index.php?page=animals");
+        header("Location:/spa/public/?page=animals");
     }
 
     public function updateAnimal(/* $data */)
@@ -56,7 +50,7 @@ class AnimalsController {
             var_dump($animal);
             $id = $_GET['id'];
             $this->manager->update($animal, $id);
-            header("Location:index.php?page=animal&id=$id");
+            header("Location:/spa/public/?page=animal&id=$id");
         }
         include ROOT."/templates/Animals/addAnimal.php";
     }

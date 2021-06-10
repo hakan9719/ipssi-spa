@@ -25,6 +25,13 @@ abstract class Manager implements ManagerInterface, GlobalInterface{
         return $query->fetchAll(\PDO::FETCH_CLASS, "App\Entity\\".ucfirst($this->table));
     }
 
+    public function getTinyList()
+    {
+        $query = $this->db->query("SELECT * FROM $this->table LIMIT 3");
+        return $query->fetchAll(\PDO::FETCH_CLASS, "App\Entity\\".ucfirst($this->table));
+    }
+
+
     // public abstract function getOne();
 
     // public abstract function update();
