@@ -44,6 +44,9 @@ class ArticleController {
                 $this->manager->update($article, $id);
                 header("Location:/spa/public/?page=article&id=$id");
             }
+
+            $id = $_GET['id'];
+            $article = $this->manager->getOne(['id'=>$id]);
             include ROOT."/templates/Articles/addArticle.php";
         }
 

@@ -51,6 +51,8 @@ class ProductsController {
                 $this->manager->update($product, $id);
                 header("Location:/spa/public/?page=product&id=$id");
             }
+            $id = $_GET['id'];
+            $product = $this->manager->getOne(['id'=>$id]);
             include ROOT."/templates/Products/addProduct.php";
         }
 }

@@ -11,11 +11,11 @@ require ROOT."/templates/headerView.php";
                 <form action="" class="form justify-content-center" method="POST">
                     <div class="form-group">
                         <label for="title" class="form-label">Titre:</label>
-                        <input type="text" class="form-control" name="title" id="title" value="Titre">
+                        <input type="text" class="form-control" name="title" id="title" value="<?=isset($article)?$article->getTitle():''?>">
                     </div>
                     <div class="form-group">
                         <label for="content" class="form-label">Contenu:</label>
-                        <textarea type="text" class="form-control" name="content" id="content" value=""></textarea>
+                        <textarea type="text" class="form-control" name="content" id="content" value="<?=isset($article)?$article->getContent():''?>"></textarea>
                     </div>  
                         <button style="margin-top: 10px;" class="btn btn-secondary">Valider</button>
                 </form>
