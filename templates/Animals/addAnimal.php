@@ -17,39 +17,39 @@ require ROOT."/templates/headerView.php";
                 <form action="" class="form justify-content-center" method="POST">
                     <div class="form-group">
                         <label for="title" class="form-label">Nom de l'animal :</label>
-                        <input type="text" class="form-control" name="name" id="name" value="Nom de l'animal">
+                        <input type="text" class="form-control" name="name" id="name" value="<?=isset($animal)?$animal->getName():''?>">
                     </div>
                     <div class="form-group">
                         <label for="title" class="form-label">Espèce de l'animal :</label>
-                        <input type="text" class="form-control" name="species" id="species" value="Espèce">
+                        <input type="text" class="form-control" name="species" id="species" value="<?=isset($animal)?$animal->getSpecies():''?>">
                     </div>
                     <div class="form-group">
                         <label for="title" class="form-label">Taille de l'animal :</label>
-                        <input type="text" class="form-control" name="size" id="size" value="Taille">
+                        <input type="text" class="form-control" name="size" id="size" value="<?=isset($animal)?$animal->getSize():''?>">
                     </div>
                     <div class="form-group">
                         <label for="title" class="form-label">Race de l'animal :</label>
-                        <input type="text" class="form-control" name="race" id="race" value="Race">
+                        <input type="text" class="form-control" name="race" id="race" value="<?=isset($animal)?$animal->getRace():''?>">
                     </div>
                     <div class="form-group">
                         <label for="title" class="form-label">Sexe de l'animal :</label>
-                        <input type="text" class="form-control" name="gender" id="gender" value="Sexe">
+                        <input type="text" class="form-control" name="gender" id="gender" value="<?=isset($animal)?$animal->getGender():''?>">
                     </div>
                     <div class="form-group">
                         <label for="title" class="form-label">Date de naissance :</label>
-                        <input type="date" class="form-control" name="birthdate" id="birthdate">
+                        <input type="date" class="form-control" name="birthdate" id="<?=isset($animal)?$animal->getBirthdate():''?>">
                     </div>
                     <div class="form-group">
                         <label for="title" class="form-label">Couleur de l'animal :</label>
-                        <input type="text" class="form-control" name="color" id="color" value="Couleur">
+                        <input type="text" class="form-control" name="color" id="color" value="<?=isset($animal)?$animal->getColor():''?>">
                     </div>
                     <div class="form-group">
                         <label for="categorie" class="form-label">Localisation :</label>
-                        <input type="text" class="form-control" name="location" id="location" value="Localisation">
+                        <input type="text" class="form-control" name="location" id="location" value="<?=isset($animal)?$animal->getLocation():''?>">
                     </div>  
                     <div class="form-group">
                             <label for="content" class="form-label">Description :</label>
-                            <textarea type="text" class="form-control" name="description" id="description" value="ProductDescription"></textarea>
+                            <textarea type="text" class="form-control" name="description" id="description" value="<?=isset($animal)?$animal->getDescription():''?>"></textarea>
                     </div>
                         <button style="margin-top: 10px;" class="btn btn-secondary">Valider</button>
                 </form>

@@ -52,6 +52,8 @@ class AnimalsController {
             $this->manager->update($animal, $id);
             header("Location:/spa/public/?page=animal&id=$id");
         }
+        $id = $_GET['id'];
+        $animal = $this->manager->getOne(['id'=>$id]);
         include ROOT."/templates/Animals/addAnimal.php";
     }
 }
