@@ -1,37 +1,15 @@
 <?php
 
-// use App\Controller\ArticleController;
-
-// switch ($_GET["page"]) {
-//     case 'addArticle':
-//         $controller = new ArticleController();
-//         $controller->addArticle(/* $_POST */);
-//         break;
-//     case 'home':
-//         $controller = new ArticleController();
-//         $controller->home();
-//         break;
-    
-//     default:
-//         # code...
-//         break;
-// }
-
-
-// $routes = [
-//     "addArticle" => ["controller" =>"ArticleController", "method" => "addArticle"],
-//     "home" => ["controller" =>"ArticleController", "method" => "home"],
-//     "test" => ["controller" =>"ArticleController", "method" => "test", "param" => ["id" => $id]],
-// ];
 $routes = [
+    "home" => ["controller" =>"AnimalsController", "method" => "home",],
     "animals" => ["controller" =>"AnimalsController", "method" => "animals"],
     "animal" => ["controller" =>"AnimalsController", "method" => "animal", "param" => ["id" => $_GET['id']??'']],
-    "home" => ["controller" =>"AnimalsController", "method" => "home"],
+    "blog" => ["controller" => "ArticleController", "method" => "articles"],
+    "article" => ["controller" => "ArticleController", "method" => "article", "param" => ["id" => $_GET['id']??'']],
+    "ecrireArticle" => ["controller" => "ArticleController", "method" => "addArticle"],
+    "supprimerArticle" => ["controller" => "ArticleController", "method" => "deleteArticle", "param" => ["id" => $_GET['id']??'']],
 ];
 
-// var_dump($_GET["page"]);
-// var_dump(array_key_exists($_GET["page"],$routes));
-// var_dump($routes);
 if(isset($_GET["page"]) && array_key_exists($_GET["page"],$routes)){
     $case = $routes[$_GET["page"]];
     $caseController = "App\Controller\\".$case["controller"];
@@ -42,8 +20,8 @@ if(isset($_GET["page"]) && array_key_exists($_GET["page"],$routes)){
     if (isset($case["param"])) {
         $param = $case["param"];
     }
-
+    
     $controller->$method($param);
-}else{
+} else {
     include "../templates/404View.php";
 }

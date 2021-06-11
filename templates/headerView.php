@@ -12,16 +12,18 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="/index.php?page=animals">SPA</a>
+        <a class="navbar-brand" href="index.php?page=animals">SPA</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-            <a class="nav-link" href="/index.php?page=animals">Animaux</a>
-            <a class="nav-link" href="/index.php?page=blog">Blog</a>
-            <a class="nav-link" href="/index.php?page=donation">Don</a>
-            <a class="nav-link" href="/index.php?page=shop">Boutique</a>
+            <a class="nav-link" href="index.php?page=animals">Animaux</a>
+            <a class="nav-link" href="index.php?page=blog">Blog</a>
+            <a class="nav-link" href="index.php?page=donation">Don</a>
+            <a class="nav-link" href="index.php?page=shop">Boutique</a>
+            <a class="nav-link" href="index.php?page=ecrireArticle">Ecrire un article</a>
+            <a class="nav-link" href="index.php?page=supprimerArticle">Supprimer un article</a>
         </div>
         </div>
     </div>
