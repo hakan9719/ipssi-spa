@@ -15,13 +15,13 @@ class ArticleController {
     public function articles()
     {
         $articles = $this->manager->getList();
-        include ROOT."/templates/articlesView.php";
+        include ROOT."/templates/Articles/articlesView.php";
     }
 
     public function article($id)
     {
         $articles = $this->manager->getOne($id);
-        include ROOT."/templates/articleView.php";
+        include ROOT."/templates/Articles/articleView.php";
     }
 
     public function addArticle()
@@ -32,7 +32,7 @@ class ArticleController {
            $this->manager->create($article);
            header("Location:index.php?page=blog");
        }
-        include ROOT."/templates/addArticle.php";
+        include ROOT."/templates/Articles/addArticle.php";
     }
 
     public function updateArticle(/* $data */)
@@ -44,7 +44,7 @@ class ArticleController {
                 $this->manager->update($article, $id);
                 header("Location:/spa/public/?page=article&id=$id");
             }
-            include ROOT."/templates/Animals/addAnimal.php";
+            include ROOT."/templates/Articles/addArticle.php";
         }
 
     public function deleteArticle($id)

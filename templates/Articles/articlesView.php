@@ -1,7 +1,5 @@
 <?php 
-
-require "headerView.php";
-
+require ROOT."/templates/headerView.php";
 ?>
     <div class="container p-2">
         <div class="row d-flex justify-content-between">

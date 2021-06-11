@@ -20,6 +20,7 @@ $routes = [
     "article" => ["controller" => "ArticleController", "method" => "article", "param" => ["id" => $_GET['id']??'']],
     "ecrireArticle" => ["controller" => "ArticleController", "method" => "addArticle"],
     "supprimerArticle" => ["controller" => "ArticleController", "method" => "deleteArticle", "param" => ["id" => $_GET['id']??'']],
+    "modifierArticle" => ["controller" => "ArticleController", "method" => "updateArticle", "param" => ["id" => $_GET['id']??'']],
 ];
 
 if(isset($_GET["page"]) && array_key_exists($_GET["page"],$routes)){
