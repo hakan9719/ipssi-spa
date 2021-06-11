@@ -37,7 +37,7 @@ require ROOT."/templates/headerView.php";
                     </div>
                     <div class="form-group">
                         <label for="title" class="form-label">Date de naissance :</label>
-                        <input type="date" class="form-control" name="birthdate" id="<?=isset($animal)?$animal->getBirthdate():''?>">
+                        <input type="date" class="form-control" name="birthdate" id="birthdate" value="<?=isset($animal)?$animal->getBirthdate():''?>">
                     </div>
                     <div class="form-group">
                         <label for="title" class="form-label">Couleur de l'animal :</label>
