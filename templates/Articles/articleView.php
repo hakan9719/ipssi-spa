@@ -10,7 +10,7 @@ require ROOT."/templates/headerView.php";
                 <p>Titre de l'article : <?php echo $articles->getTitle() ?></p>           
             <div class="col-12">
                 <a href="/spa/public/?page=supprimerArticle&id=<?php echo $articles->getId() ?>" class="btn btn-danger">Supprimer cet article</a>
-                <a href="/spa/public/?page=modifierArticle&id=<?php echo $articles->getId() ?>" class="btn btn-danger">Modifier cet article</a>
+                <a href="/spa/public/?page=modifierArticle&id=<?php echo $articles->getId() ?>" class="btn btn-secondary">Modifier cet article</a>
             </div>
         </div>
     </div>

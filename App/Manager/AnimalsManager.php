@@ -8,7 +8,9 @@ class AnimalsManager extends Manager{
     protected $db;
     protected $table = "animals";
 
-
+    /**
+     * public function pour enregistrer un animal dans la bdd
+     */
     public function create ($animal)
     {
         $statement = "INSERT INTO animals (name, species, size, race,gender,birthdate,color,description,location) 
@@ -26,14 +28,20 @@ class AnimalsManager extends Manager{
         $prepare->bindValue(":location", $animal->getLocation());
         $prepare->execute();
     }
-    
+
+    /**
+     * public function pour charger un animal (id=$id) de la base de donnée
+     * @return  Animals
+     */
     public function getOne($id)
     {
         $query = $this->db->query("SELECT * FROM animals WHERE id =".$id['id']);
         return $query->fetchAll(\PDO::FETCH_CLASS, "App\Entity\Animals")[0];
     }
 
-    
+    /**
+     * public function pour mettre à jour un animal dans la bdd
+     */
     public function update($animal, $id)
     {
         $statement = "UPDATE animals SET name = :name, species = :species, size = :size, race = :race, gender = :gender, birthdate = :birthdate, color = :color, description = :description, location = :location WHERE id =".$id." ";
@@ -52,7 +60,9 @@ class AnimalsManager extends Manager{
         $prepare->execute();
     }
 
-
+    /**
+     * public function pour supprimer un animal de la bdd
+     */
     public function delete($id)
     {
         $query = $this->db->query("DELETE FROM animals WHERE id =".$id['id']);
