@@ -15,7 +15,9 @@ require ROOT."/templates/headerView.php";
                     </div>
                     <div class="form-group">
                         <label for="content" class="form-label">Contenu:</label>
-                        <textarea type="text" class="form-control" name="content" id="content" value="<?=isset($article)?$article->getContent():''?>"></textarea>
+                        <textarea type="text" class="form-control" name="content" id="content">
+                            <?=isset($article)?$article->getContent():''?>
+                        </textarea>
                     </div>  
                         <button style="margin-top: 10px;" class="btn btn-secondary">Valider</button>
                 </form>
