@@ -30,13 +30,27 @@ class ArticleController {
            $article = new Articles();
            $article->hydrate($_POST);
            $this->manager->create($article);
-           header("Location:index.php?page=ecrireArticle");
+           header("Location:index.php?page=blog");
        }
         include ROOT."/templates/addArticle.php";
     }
 
+    public function updateArticle(/* $data */)
+        {
+            if (!empty($_POST)) {
+                $article = new Articles();
+                $article->hydrate($_POST);
+                $id = $_GET['id'];
+                $this->manager->update($article, $id);
+                header("Location:/spa/public/?page=article&id=$id");
+            }
+            include ROOT."/templates/Animals/addAnimal.php";
+        }
+
     public function deleteArticle($id)
     {
         $articles = $this->manager->delete($id);
+        header("Location:/spa/public/?page=blog");
+
     }
 }

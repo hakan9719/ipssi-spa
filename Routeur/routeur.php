@@ -16,7 +16,6 @@ $routes = [
     "deleteProduct" => ["controller" => "ProductsController", "method" => "deleteProduct", "param" => ["id" => $_GET['id']??'']],
     "updateProduct" => ["controller" => "ProductsController", "method" => "updateProduct", "param" => ["id" => $_GET['id']??'']],
 
-    "home" => ["controller" =>"AnimalsController", "method" => "home",],
     "animals" => ["controller" =>"AnimalsController", "method" => "animals"],
     "animal" => ["controller" =>"AnimalsController", "method" => "animal", "param" => ["id" => $_GET['id']??'']],
     "blog" => ["controller" => "ArticleController", "method" => "articles"],
